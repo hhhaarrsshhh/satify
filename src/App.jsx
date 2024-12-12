@@ -1,24 +1,16 @@
-import React from "react";
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
-import Dashboard from "./components/Dashboard";
-import Level from "./components/Level";
-import Scoreboard from "./subComponents/Scoreboard";
-import Quiz from "./components/Quiz";
+// src/App.js
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
 
-const App = () => {
+function App() {
   return (
-    <div className="flex h-screen">
-      <Sidebar />
-      <div className="flex-1 flex flex-col">
-        <Header />
-        <Dashboard />
-        <Level/>
-        <Scoreboard/>
-        <Quiz/>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        {/* Use Layout to wrap the main routes */}
+        <Route path="/*" element={<Layout />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
