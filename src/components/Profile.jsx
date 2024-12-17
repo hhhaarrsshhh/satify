@@ -6,7 +6,7 @@ const Profile = () => {
     email: "johndoe@example.com",
     phone: "+1 234 567 8901",
     username: "johndoe123",
-    avatar: "https://via.placeholder.com/150", // Replace with an actual image URL
+    avatar: "https://via.placeholder.com/150", 
   };
 
   const levelStats = {

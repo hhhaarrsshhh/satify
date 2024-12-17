@@ -1,17 +1,19 @@
-import React from "react";
+import ladyImg from '../assets/women.png';
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center bg-blue-200 px-8 py-4">
-      <div className="text-xl font-semibold">
-        Welcome to SATify, Your Ultimate SAT Preparation Companion!
-      </div>
-      <div className="flex items-center gap-6">
-        <button className="bg-white p-2 rounded-full shadow-md">🔔</button>
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
-          <span>Hello Omar!</span>
-        </div>
+    <header
+      className="flex justify-between items-center px-1 py-8 mb-5 rounded-md"
+      style={{
+        backgroundImage: `linear-gradient(180deg, rgba(4, 112, 184, 0.8) 0%, rgba(79, 175, 215, 0.8) 100%), url(${ladyImg})`,
+        backgroundSize: 'auto 100%',  
+        backgroundPosition: 'left',  
+        backgroundRepeat: 'no-repeat',  
+        height: '150px', 
+      }}
+    >
+      <div className="text-xl text-white font-semibold bg-opacity-50 p-4 rounded-md">
+        Welcome to SATify, <br />Your Ultimate SAT Preparation Companion!
       </div>
     </header>
   );

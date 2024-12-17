@@ -1,25 +1,33 @@
-
-const Level = () => {
+const Level = ({ level, subject, characterImg, activeLevel, onLevelClick }) => {
   return (
-    <div className="flex-1 flex flex-col items-center bg-blue-300 p-4 rounded-lg shadow-lg">
-      <h1 className="text-4xl font-bold text-yellow-600 mb-4">Level 1</h1>
-      <h2 className="text-2xl text-blue-900 mb-8">ENGLISH</h2>
-      
-      {/* Interactive Elements */}
-      <div className="flex items-center gap-4 flex-wrap justify-center">
-        <div className="w-16 h-16 bg-yellow-400 text-center text-2xl rounded-full flex items-center justify-center font-bold">1</div>
-        <div className="w-16 h-16 bg-gray-300 text-center text-2xl rounded-full flex items-center justify-center font-bold">2</div>
-        <div className="w-16 h-16 bg-gray-300 text-center text-2xl rounded-full flex items-center justify-center font-bold">3</div>
-        <div className="w-16 h-16 bg-gray-300 text-center text-2xl rounded-full flex items-center justify-center font-bold">4</div>
-        <div className="w-16 h-16 bg-gray-300 text-center text-2xl rounded-full flex items-center justify-center font-bold">5</div>
+    <div className="flex-1 flex flex-col items-center bg-blue-300 p-6 rounded-lg shadow-lg">
+      {/* Level Title */}
+      <h1 className="text-4xl font-bold text-yellow-600 mb-4">{`Level ${level}`}</h1>
+      <h2 className="text-2xl text-blue-900 mb-6">{subject}</h2>
+
+      {/* Interactive Levels */}
+      <div className="flex items-center gap-4 flex-wrap justify-center mb-6">
+        {[1, 2, 3, 4, 5].map((lvl) => (
+          <div
+            key={lvl}
+            onClick={() => onLevelClick(lvl)} 
+            className={`w-16 h-16 cursor-pointer ${
+              lvl === activeLevel
+                ? "bg-yellow-400 text-white"
+                : "bg-gray-300 text-gray-700"
+            } text-center text-2xl rounded-full flex items-center justify-center font-bold transition-all hover:scale-110`}
+          >
+            {lvl}
+          </div>
+        ))}
       </div>
 
-      {/* Character */}
-      <div className="mt-8">
+      {/* Character Image */}
+      <div className="mt-6">
         <img
-          src="/path-to-character-image.png"
-          alt="Character"
-          className="w-24 h-24"
+          src={characterImg}
+          alt={`${subject} character`}
+          className="w-32 h-32 rounded-full shadow-lg"
         />
       </div>
     </div>
