@@ -24,23 +24,25 @@ const Profile = () => {
   return (
     <div className="flex flex-col lg:flex-row bg-gradient-to-r from-blue-500 to-blue-400 p-10 rounded-lg shadow-2xl max-w-6xl mx-auto space-y-8 lg:space-y-0 lg:space-x-8">
       {/* Left Section */}
-      <div className="flex flex-col items-center lg:w-3/4 space-y-6">
-        {/* Avatar */}
-        <div className="relative">
-          <img
-            src={user.avatar}
-            alt="User Avatar"
-            className="w-36 h-36 rounded-full border-4 border-white shadow-lg"
-          />
-          <span className="absolute bottom-2 right-2 bg-green-500 w-5 h-5 rounded-full border-2 border-white"></span>
-        </div>
+      <div className="flex flex-col lg:w-3/4 space-y-8">
+        {/* Avatar and Online Status */}
+        <div className="flex items-center space-x-4">
+          <div className="relative">
+            <img
+              src={user.avatar}
+              alt="User Avatar"
+              className="w-36 h-36 rounded-full border-4 border-white shadow-lg"
+            />
+            <span className="absolute bottom-2 right-2 bg-green-500 w-5 h-5 rounded-full border-2 border-white"></span>
+          </div>
 
-        {/* User Info */}
-        <div className="text-center space-y-2">
-          <h2 className="text-4xl font-extrabold text-white">{user.name}</h2>
-          <p className="text-blue-200 text-lg">{user.email}</p>
-          <p className="text-blue-200 text-lg">{user.phone}</p>
-          <p className="text-blue-300 italic">@{user.username}</p>
+          {/* User Info */}
+          <div className="text-left space-y-2">
+            <h2 className="text-4xl font-extrabold text-white">{user.name}</h2>
+            <p className="text-blue-200 text-lg">{user.email}</p>
+            <p className="text-blue-200 text-lg">{user.phone}</p>
+            <p className="text-blue-300 italic">@{user.username}</p>
+          </div>
         </div>
 
         {/* Statistics Section */}
@@ -89,7 +91,7 @@ const Profile = () => {
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-4">
+        <div className="flex gap-4 justify-start mt-6">
           <button className="bg-red-500 text-white px-6 py-3 rounded-lg shadow hover:bg-red-600 transition-transform transform hover:scale-105">
             Logout
           </button>

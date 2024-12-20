@@ -16,7 +16,7 @@ const QuizDetail = () => {
   const [timeLeft, setTimeLeft] = useState(30 * 60);
 
   if (!quiz) {
-    return <div className="text-center text-red-500">Quiz not found</div>;
+    return <div className="text-center text-red-500 text-xl">Quiz not found</div>;
   }
 
   const { questions } = quiz;
@@ -80,42 +80,43 @@ const QuizDetail = () => {
   };
 
   return (
-    <div className="quiz-detail p-4">
+    <div className="quiz-detail p-8 max-w-3xl mx-auto bg-white rounded-lg shadow-lg">
       {isInstructionVisible ? (
         <QuizInstructions onStartQuiz={handleStartQuiz} />
       ) : (
         <>
           {!isQuizCompleted ? (
             <>
-              <h2 className="text-2xl font-semibold text-center mb-6">{quiz.title}</h2>
-              <div className="text-center text-red-500 font-semibold mb-4">
+              <h2 className="text-3xl font-semibold text-center text-blue-600 mb-6">{quiz.title}</h2>
+              <div className="text-center text-red-500 font-semibold text-xl mb-4">
                 Time Left: {formatTime(timeLeft)}
               </div>
               <div className="w-full bg-gray-200 rounded-full h-4 mb-6">
                 <div
-                  className="bg-blue-500 h-4 rounded-full"
+                  className="bg-gradient-to-r from-blue-500 to-teal-500 h-4 rounded-full"
                   style={{ width: `${progressPercentage}%` }}
                 ></div>
               </div>
-              <h3 className="text-lg text-center mb-4">
+              <h3 className="text-lg font-medium text-center mb-4 text-gray-800">
                 Question {currentQuestionIndex + 1} of {questions.length}
               </h3>
               <Question
                 question={questions[currentQuestionIndex]}
                 nextQuestion={nextQuestion}
               />
+              <div className="border-t border-gray-300 my-6"></div> {/* Thin line separator */}
               <div className="flex justify-center mt-6 space-x-4">
                 <button
                   onClick={prevQuestion}
                   disabled={currentQuestionIndex === 0}
-                  className="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition disabled:opacity-50"
+                  className="bg-gray-400 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-gray-500 transition disabled:opacity-50"
                 >
                   Previous
                 </button>
 
                 <button
                   onClick={() => nextQuestion()}
-                  className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
+                  className="bg-gradient-to-r from-blue-500 to-teal-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition"
                 >
                   Next
                 </button>
@@ -123,7 +124,7 @@ const QuizDetail = () => {
               <div className="flex justify-center mt-6">
                 <button
                   onClick={handleSubmit}
-                  className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition"
+                  className="bg-green-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-green-600 transition"
                 >
                   Submit Test
                 </button>

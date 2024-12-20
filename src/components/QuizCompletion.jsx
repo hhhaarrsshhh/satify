@@ -5,9 +5,13 @@ const QuizCompletion = ({ score, totalQuestions, onRetake }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-blue-300 text-white">
+    <div className="flex flex-col items-center justify-center text-white">
       <div className="bg-white text-gray-800 rounded-lg shadow-lg p-8 w-96 text-center">
-        <div className="text-yellow-500 text-4xl mb-4">★ ★ ★ ★ ★</div>
+        {/* Large Stars */}
+        <div className="text-yellow-500 text-6xl mb-4">
+          ★ ★ ★ ★ ★
+        </div>
+
         <h3 className="text-2xl font-semibold mb-4">Quiz Completed!</h3>
         <p className="text-lg mb-4">
           <span className="font-bold text-green-600">Correct: {score}</span>{" "}
@@ -19,15 +23,15 @@ const QuizCompletion = ({ score, totalQuestions, onRetake }) => {
         <div className="flex justify-around mt-6">
           <button
             onClick={onRetake}
-            className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
+            className="bg-white text-blue-500 font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-50 transition"
           >
             Retake Quiz
           </button>
           <button
             onClick={() => navigate("/quiz")}
-            className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition"
+            className="bg-white text-blue-500 font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-50 transition"
           >
-            Go to Quizes
+            Go to Quizzes
           </button>
         </div>
       </div>
