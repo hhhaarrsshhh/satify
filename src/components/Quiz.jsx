@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { quizData } from "./dataComponents/quizData"; 
+import { quizData } from "./dataComponents/quizData";
 
 const Quiz = () => {
   return (
@@ -31,8 +31,13 @@ const Quiz = () => {
                 <div className="flex justify-between text-gray-600 text-sm mb-4">
                   <span>⏳ {quiz.questions.length} Questions</span>
                 </div>
+                {quiz.completed ? (
+                  <span className="text-green-500 font-semibold">Completed</span>
+                ) : (
+                  <span className="text-red-500 font-semibold">Incomplete</span>
+                )}
                 <Link to={`/quiz/${quiz.id}`}>
-                  <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-semibold transform hover:translate-y-1">
+                  <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-semibold transform hover:translate-y-1 mt-4">
                     Start Quiz
                   </button>
                 </Link>
