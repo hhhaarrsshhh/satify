@@ -1,12 +1,12 @@
 import React from "react";
-
+import iconman from '../assets/iconamoon_profile-bold.png'
 const Profile = () => {
   const user = {
     name: "John Doe",
     email: "johndoe@example.com",
     phone: "+1 234 567 8901",
     username: "johndoe123",
-    avatar: "https://via.placeholder.com/150",
+    avatar: <img src={iconman}/>,
   };
 
   const levelStats = {
