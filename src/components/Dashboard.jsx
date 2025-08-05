@@ -34,8 +34,8 @@ const Dashboard = () => {
 
           {/* Buttons */}
           <div className="flex max-sm:h-10 max-sm:w-28 max-sm:flex-justify-center md:justify-around gap-4 my-6 ">
-           <img src={img2} className="h-18 w-18"/>
-           <img src={img1} className="h-18 w-18 rounded-lg"/>
+           <img src={img1} className="h-18 w-18"/>
+           <img src={img2} className="h-18 w-18 rounded-lg"/>
 
            <img src={img3} className="h-18 w-18"/>
 

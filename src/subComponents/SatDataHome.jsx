@@ -46,11 +46,7 @@ const SATTests = () => {
               <tr key={test.id} className="hover:bg-gray-50 text-gray-800">
                 {/* Test Name & Date */}
                 <td className="py-4 px-4 flex items-center space-x-2">
-                  <img
-                    src="https://via.placeholder.com/40"
-                    alt="avatar"
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
+                  
                   <div>
                     <p className="font-medium">{test.name}</p>
                     <p className="text-sm text-gray-500">{test.date}</p>

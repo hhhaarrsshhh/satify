@@ -22,14 +22,7 @@ const Level = ({ level, subject, characterImg, activeLevel, onLevelClick }) => {
         ))}
       </div>
 
-      {/* Character Image */}
-      <div className="mt-6">
-        <img
-          src={characterImg}
-          alt={`${subject} character`}
-          className="w-32 h-32 rounded-full shadow-lg"
-        />
-      </div>
+    
     </div>
   );
 };
